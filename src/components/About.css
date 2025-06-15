@@ -1,0 +1,67 @@
+.about-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, #f8f5fb 0%, #ede8f2 100%);
+  position: relative;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.about-image {
+  flex: 0 0 250px;
+}
+
+.about-pic {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c8a8e0 0%, #b898d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 15px 30px rgba(90, 75, 124, 0.2);
+}
+
+/* ONLY the emoji moves */
+.wave-emoji {
+  font-size: 6rem;
+  display: inline-block;
+  animation: wave 2s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  10% { transform: rotate(14deg); }
+  20% { transform: rotate(-8deg); }
+  30% { transform: rotate(14deg); }
+  40% { transform: rotate(-4deg); }
+  50% { transform: rotate(10deg); }
+  60% { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.about-content {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 3rem;
+  color: #5a4b7c;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: #2c1810;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0;
+}
