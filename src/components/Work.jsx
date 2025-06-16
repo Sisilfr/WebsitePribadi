@@ -24,7 +24,7 @@ const projects = [
   {
     id: 4,
     icon: '🚀',
-    title: 'Project Four',
+    title: 'Next Project?',
     description: 'Coming soon – Exciting new project'
   }
 ]
