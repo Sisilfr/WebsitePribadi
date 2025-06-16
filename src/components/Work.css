@@ -1,35 +1,64 @@
 /* Work Section */
 .work {
   padding: 5rem 2rem;
-  background: linear-gradient(135deg, #e8d5f2 0%, #d4c4e0 100%);
+  background: linear-gradient(135deg, #e3cfff 0%, #dcc4e9 100%);
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .work-title {
-  font-size: 3rem;
-  color: #5a4b7c;
+  font-size: 3.2rem;
+  color: #4b367c;
   margin-bottom: 3rem;
   text-align: center;
-  font-weight: bold;
+  font-weight: 900;
+  text-shadow: 2px 2px #fff;
+  position: relative;
+  z-index: 2;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
 }
 
 .project-card {
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 20px;
   padding: 2rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Glow */
+.project-card:hover::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(215, 178, 255, 0.3) 0%, transparent 70%);
+  animation: glowRotate 5s linear infinite;
+  z-index: 0;
+}
+
+@keyframes glowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 /* Image container */
@@ -39,6 +68,7 @@
   border-radius: 15px;
   overflow: hidden;
   margin-bottom: 1.5rem;
+  z-index: 1;
 }
 
 .project-image img {
@@ -48,7 +78,7 @@
   border-radius: 15px;
 }
 
-/* For fallback emoji display */
+/* Fallback (emoji) */
 .project-image.fallback {
   display: flex;
   align-items: center;
@@ -60,21 +90,24 @@
 
 /* Card Content */
 .project-title {
-  font-size: 1.5rem;
-  color: #5a4b7c;
+  font-size: 1.6rem;
+  color: #4b367c;
   margin-bottom: 0.5rem;
   text-align: center;
+  font-weight: bold;
+  z-index: 1;
 }
 
 .project-description {
   color: #2c1810;
-  opacity: 0.85;
+  opacity: 0.9;
   line-height: 1.6;
   font-size: 1rem;
   text-align: center;
+  z-index: 1;
 }
 
-/* Responsive Design */
+/* Responsive */
 @media (max-width: 768px) {
   .work {
     padding: 3rem 1rem;

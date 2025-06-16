@@ -1,3 +1,4 @@
+/* Section */
 .about-section {
   padding: 5rem 2rem;
   background: linear-gradient(135deg, #f8f5fb 0%, #ede8f2 100%);
@@ -8,11 +9,12 @@
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 4rem;
   flex-wrap: wrap;
 }
 
+/* Waving hand circle */
 .about-image {
   flex: 0 0 250px;
 }
@@ -28,7 +30,6 @@
   box-shadow: 0 15px 30px rgba(90, 75, 124, 0.2);
 }
 
-/* ONLY the emoji moves */
 .wave-emoji {
   font-size: 6rem;
   display: inline-block;
@@ -47,6 +48,7 @@
   100% { transform: rotate(0deg); }
 }
 
+/* Content */
 .about-content {
   flex: 1;
 }
@@ -54,14 +56,130 @@
 .about-title {
   font-size: 3rem;
   color: #5a4b7c;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: bold;
 }
 
-.about-description {
+.about-subtitle {
   font-size: 1.2rem;
+  color: #5a4b7c;
+  margin-bottom: 2rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+/* Grid Content */
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-journey {
+  flex: 1 1 55%;
+}
+
+.about-journey h3 {
+  font-size: 1.5rem;
+  color: #5a4b7c;
+  margin-bottom: 1rem;
+}
+
+.about-journey p {
   color: #2c1810;
+  font-size: 1.05rem;
   line-height: 1.8;
-  max-width: 600px;
-  margin: 0;
+  margin-bottom: 1rem;
+}
+
+/* Skills box */
+.about-skills {
+  flex: 1 1 15%;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-skills h3 {
+  font-size: 1.5rem;
+  color: #5a4b7c;
+  margin-bottom: 1rem;
+}
+
+.skills-section {
+  margin-top: 1rem;
+}
+
+.skills-title {
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  color: #5a4b7c;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-tags span {
+  background: #5A4B7C;
+  color: #eeebf6;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-grid {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .about-subtitle {
+    text-align: center;
+  }
+
+  .about-journey, .about-skills {
+    flex: 1 1 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .wave-emoji {
+    font-size: 4rem;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-journey p,
+  .skills-tags span {
+    font-size: 0.95rem;
+  }
+
+  .skills-tags {
+    justify-content: center;
+  }
 }

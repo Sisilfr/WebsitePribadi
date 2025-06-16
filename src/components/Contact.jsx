@@ -1,87 +1,124 @@
-import React, { useState } from 'react'
-import { motion } from 'framer-motion'
-import emailjs from '@emailjs/browser'
-import './Contact.css'
+import React, { useState, useRef } from 'react';
+import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
+import './Contact.css';
 
-const SERVICE_ID = 'SERVICE-ID'
-const TEMPLATE_ID = 'TEMPLATE_ID'
-const PUBLIC_KEY = 'PUBLIC_KEY'
+const SERVICE_ID = 'your_service_id';
+const TEMPLATE_ID = 'your_template_id';
+const PUBLIC_KEY = 'your_public_key';
 
 const Contact = () => {
+  const form = useRef();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: ''
-  })
+  });
 
-  const [isSending, setIsSending] = useState(false)
+  const [isSending, setIsSending] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-  }
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    const { name, email, message } = formData
-    if (!name || !email || !message) return alert('All fields are required.')
+    e.preventDefault();
+    const { name, email, message } = formData;
+    if (!name || !email || !message) {
+      setErrorMessage('All fields are required.');
+      return;
+    }
 
-    setIsSending(true)
+    setIsSending(true);
+    setErrorMessage('');
+    setSuccessMessage('');
 
     const templateParams = {
       from_name: name,
       from_email: email,
       message: message
-    }
+    };
 
     emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
       .then(() => {
-        alert('Thank you! Your message was sent successfully.')
-        setFormData({ name: '', email: '', message: '' })
-        setIsSending(false)
+        setSuccessMessage('Thank you! Your message was sent successfully.');
+        setFormData({ name: '', email: '', message: '' });
       })
-      .catch((error) => {
-        console.error('Email send error:', error)
-        alert('Oops, something went wrong. Please try again later.')
-        setIsSending(false)
+      .catch(() => {
+        setErrorMessage('Something went wrong. Please try again later.');
       })
-  }
+      .finally(() => {
+        setIsSending(false);
+      });
+  };
 
   return (
-    <motion.section
-      className="contact py-20 px-6 bg-gray-100"
-      id="contact"
-      initial={{ opacity: 0, y: 60 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true, amount: 0.2 }}
-    >
+    <section className="contact" id="contact">
+      {/* Decorative Flowers */}
       <motion.div
-        className="decorative-flower contact-flower absolute right-10 top-10 text-4xl"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
+        className="decorative-flower flower-top-right"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+      >
+        ✿
+      </motion.div>
+      <motion.div
+        className="decorative-flower flower-bottom-left"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
+      >
+        ❀
+      </motion.div>
+      <motion.div
+        className="decorative-flower flower-top-left"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
       >
         ✰
       </motion.div>
+      <motion.div
+        className="decorative-flower flower-bottom-right"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 18, repeat: Infinity, ease: 'linear' }}
+      >
+        ❁
+      </motion.div>
 
-      <div className="contact-container max-w-xl mx-auto text-center">
-        <motion.h2 className="contact-title visible text-4xl font-bold mb-4">
+      <div className="contact-container">
+        <motion.h2
+          className="contact-title visible"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           CONTACT ME
         </motion.h2>
 
-        <motion.p className="contact-subtitle visible text-lg text-gray-600 mb-8">
-          Get in touch
+        <motion.p
+          className="contact-subtitle visible"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          I'd love to hear from you.
         </motion.p>
 
         <motion.form
-          className="contact-form visible space-y-4"
+          className="contact-form visible"
           onSubmit={handleSubmit}
+          ref={form}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="form-group">
             <input
               type="text"
               name="name"
-              placeholder="Name"
+              placeholder="Your Name"
               value={formData.name}
               onChange={handleInputChange}
               required
@@ -91,7 +128,7 @@ const Contact = () => {
             <input
               type="email"
               name="email"
-              placeholder="Email"
+              placeholder="Your Email"
               value={formData.email}
               onChange={handleInputChange}
               required
@@ -100,7 +137,7 @@ const Contact = () => {
           <div className="form-group">
             <textarea
               name="message"
-              placeholder="Message"
+              placeholder="Your Message"
               value={formData.message}
               onChange={handleInputChange}
               required
@@ -108,15 +145,17 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            disabled={isSending}
             className={`submit-button ${isSending ? 'loading' : ''}`}
+            disabled={isSending}
           >
-            {isSending ? 'Sending...' : 'Send'}
+            {isSending ? 'Sending...' : 'Send Message'}
           </button>
+          {successMessage && <p className="success-message">{successMessage}</p>}
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
         </motion.form>
       </div>
-    </motion.section>
-  )
-}
+    </section>
+  );
+};
 
-export default Contact
+export default Contact;
