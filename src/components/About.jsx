@@ -36,44 +36,12 @@ const About = () => {
         >
           <h2 className="about-title">About Me</h2>
           <p className="about-subtitle">
-            I am a Data Scientist student from Cakrawala University. Currently, I am learning about web development, data, and programming. I am actively learning to deeply understand data and web programming. Let's keep progressing and keep growing 🌱
+            I’m a Data Science student at Cakrawala University, transitioning from a background in customer service and administration. With several years of experience in client handling and operational support, I’ve developed strong communication, problem-solving, and adaptability skills.
+            <br /><br />
+            Driven by curiosity and a passion for data, I’m now building my foundation in programming, statistics, and web development — learning tools like Python, SQL, and data visualization. I’m especially interested in how data can be processed, interpreted, and used to generate meaningful insights across various fields.
+            <br /><br />
+            Though I’m still in the early stages, I’m committed to continuous learning and excited to grow as a future data professional. Let’s keep progressing and keep growing 🌱
           </p>
-
-          <div className="about-grid">
-            <div className="about-journey">
-              <h3>My Journey</h3>
-              <p>
-                With a strong foundation in mathematics and statistics, I’ve dedicated my learningg and education to exploring the fascinating world of data science. My journey began with a curiosity about patterns in data and has evolved into a comprehensive skill set spanning machine learning, statistical analysis, and data visualization.
-              </p>
-              <p>
-                I specialize in developing predictive models, creating interactive dashboards, and conducting thorough statistical analyses that drive business decisions. My approach combines technical expertise with creative problem-solving to deliver meaningful results.
-              </p>
-              <p>
-                Besides analyzing data, you can find me exploring new machine learning frameworks, contributing to open-source projects, or sharing knowledge through technical writing and presentations.
-              </p>
-            </div>
-
-            <div className="about-skills">
-              <h3>Education & Skills</h3>
-              <div className="skills-section">
-                <p className="skills-title">Programming Languages</p>
-                <div className="skills-tags">
-                  <span>Python</span>
-                  <span>SQL</span>
-                  <span>JavaScript</span>
-                  <span>C++</span>
-                </div>
-
-                <p className="skills-title">Tools & Frameworks</p>
-                <div className="skills-tags">
-                  <span>Vite</span>
-                  <span>Numpy</span>
-                  <span>Pandas</span>
-                  <span>Tableau</span>
-                </div>
-              </div>
-            </div>
-          </div>
         </motion.div>
       </div>
     </motion.section>

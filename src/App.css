@@ -109,3 +109,8 @@
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
+
+/* Optional spacing between sections */
+section {
+  scroll-margin-top: 80px;
+}

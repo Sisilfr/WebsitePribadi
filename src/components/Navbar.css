@@ -1,109 +1,207 @@
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 /* Navbar Styling */
 .navbar {
-    position: relative;
-    width: 100%;
-    background: linear-gradient(135deg, #e8d5f2, #c8a8e0);
-    z-index: 100;
-    padding: 1rem 0;
-    box-shadow: none;
-    border-bottom: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(135deg, #e8d5f2, #c8a8e0);
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+/* Navbar Container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Flower Logo */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
+}
+
+.navbar-flower {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+  animation: spin 10s linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
   }
-  
-  /* Navbar Container */
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.navbar-links button {
+  background: none;
+  border: none;
+  color: #2d2d2d;
+  font-weight: 800;
+  text-shadow: 0.5px 0 0 currentColor;
+  font-size: 3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.navbar-links button:hover {
+  color: #5a4b7c;
+}
+
+.navbar-links button::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #5a4b7c;
+  transition: width 0.3s ease;
+}
+
+.navbar-links button:hover::after {
+  width: 100%;
+}
+
+/* Hamburger Menu */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggle:hover .bar {
+  background-color: #5a4b7c;
+}
+
+.navbar-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #2d2d2d;
+  transition: all 0.3s ease;
+}
+
+/* Transform hamburger to X when menu is open */
+.navbar-toggle.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.navbar-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px) {
   .navbar-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 1.5rem;
   }
-  
-  /* Logo Bunga */
-  .navbar-logo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-flower {
-    width: 55px;
-    height: 55px;
-    object-fit: contain;
-    animation: spin 10s linear infinite;
-    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
-  }
-  
-  @keyframes spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  
-  /* Navigation Links */
+
   .navbar-links {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .navbar-links button {
-    background: none;
-    border: none;
-    color: #000000;
-    font-weight: 750;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar-links button:hover {
-    color: #5a4b7c;
-  }
-  
-  /* Hamburger Menu for Mobile */
-  .navbar-toggle {
-    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #e8d5f2, #c8a8e0);
     flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
+    align-items: center;
+    padding: 2rem;
+    gap: 1.8rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-150%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    z-index: 999;
   }
-  
-  .navbar-toggle .bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    transition: all 0.3s ease;
+
+  .navbar-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
-  
-  /* Responsive */
-  @media screen and (max-width: 768px) {
-    .navbar-links {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: linear-gradient(135deg, #e8d5f2, #c8a8e0);
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      gap: 1rem;
-      border-top: 1px solid #ddd;
-      transform: translateY(-20px);
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.3s ease;
-    }
-  
-    .navbar-links.open {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
-    }
-  
-    .navbar-toggle {
-      display: flex;
-    }
+
+  .navbar-links button {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.5rem;
+    width: 100%;
+    text-align: center;
   }
-  
+
+  .navbar-links button::after {
+    display: none;
+  }
+
+  .navbar-links button:hover {
+    background-color: rgba(90, 75, 124, 0.1);
+    border-radius: 8px;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-flower {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Animation for navbar items */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+

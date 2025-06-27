@@ -1,0 +1,198 @@
+/* Resume Section Styling */
+.resume-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  background: linear-gradient(to bottom, #f6f3ff, #e9ddfc);
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resume-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #4b2e83;
+  font-weight: bold;
+}
+
+.resume-section h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #3a2a64;
+}
+
+.resume-section ul {
+  padding-left: 1.5rem;
+  line-height: 1.8;
+  list-style-type: disc;
+}
+
+.resume-section ul li {
+  margin-bottom: 0.6rem;
+}
+
+.resume-item {
+  max-width: 900px;
+  margin: 0 auto 2.5rem;
+}
+
+.resume-item p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* Skills Box Styling */
+.skill-box {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 4rem auto;
+  max-width: 800px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  border: 1px solid #eae0fa;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #4b2e83;
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.skills-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #6b4fa4;
+  border-radius: 2px;
+}
+
+.skills-category {
+  margin-bottom: 2rem;
+  text-align: left;
+  padding: 1.5rem;
+  background: #f8f5ff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.skills-category h3 {
+  color: #4b2e83;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.skills-category h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background: #8a63d2;
+}
+
+/* Static Tags (for Core Competencies, Technical Skills, and Interests) */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+/* Scrolling Tags (for Programming Languages, Tools & Frameworks, Languages) */
+.scroll-left {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  margin-top: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #c1b1e1 #f0ebfa;
+}
+
+.scroll-left::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll-left::-webkit-scrollbar-track {
+  background: #f0ebfa;
+  border-radius: 3px;
+}
+
+.scroll-left::-webkit-scrollbar-thumb {
+  background-color: #c1b1e1;
+  border-radius: 3px;
+}
+
+/* Tag Style (applies to both static and scrolling) */
+.tag {
+  background-color: #6b4fa4;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Section scroll behavior */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 2rem 1rem;
+  }
+  
+  .skill-box {
+    padding: 1.5rem;
+    margin: 2rem auto;
+  }
+  
+  .skills-title {
+    font-size: 1.5rem;
+  }
+  
+  .skills-category {
+    padding: 1rem;
+  }
+  
+  .tag {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-tags {
+    gap: 0.6rem;
+  }
+  
+  .tag {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.8rem;
+  }
+}

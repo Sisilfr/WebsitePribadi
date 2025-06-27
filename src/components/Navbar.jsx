@@ -42,7 +42,7 @@ const Navbar = () => {
             </div>
 
             <div className={`navbar-links ${menuOpen ? 'open' : ''}`}>
-              {['about', 'work', 'contact'].map((section) => (
+              {['about', 'resume', 'work', 'contact'].map((section) => (
                 <button key={section} onClick={() => scrollToSection(section)}>
                   {section.toUpperCase()}
                 </button>
