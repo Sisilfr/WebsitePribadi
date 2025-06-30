@@ -69,6 +69,10 @@ This is my personal portfolio website built to showcase my professional backgrou
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
+### Framework
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=next.js&logoColor=white)
+
 ### Design & Styling
 ![Responsive Design](https://img.shields.io/badge/Responsive_Design-Mobile_First-FF6B6B?style=for-the-badge)
 ![CSS Grid](https://img.shields.io/badge/CSS_Grid-Layout-4ECDC4?style=for-the-badge)
