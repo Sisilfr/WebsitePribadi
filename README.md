@@ -2,13 +2,14 @@
 
 <div align="center">
 
-[image](https://github.com/user-attachments/assets/c50d3b64-77d5-4ec9-9cff-77233bfce8e2)
-[image](https://github.com/user-attachments/assets/9d6b5bf6-1bf6-438d-a25a-a345fb845f74)
+![image](https://github.com/user-attachments/assets/1d7009aa-5bba-46a5-8236-02ba8498328f)
+![image](https://github.com/user-attachments/assets/3b0f4ca8-51f3-44e1-9781-a7e0af3f4eeb)
+
 
 
 > **A modern, responsive personal portfolio website showcasing my professional journey, projects, and skills**
 
-[🚀 View Live](https://sisilwebsite.vercel.app) • [📂 Source Code](https://github.com/Sisilfr/WebsitePribadi) • [📧 Get in Touch](sisiliafransisca25@gmail.com)
+[🚀 View Live](https://sisilwebsite.vercel.app) • [📂 Source Code](https://github.com/Sisilfr/WebsitePribadi) • [📧 Get in Touch](mailto:sisiliafransisca25@gmail.com)
 
 </div>
 
