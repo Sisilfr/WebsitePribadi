@@ -204,7 +204,7 @@ The website is automatically deployed to Vercel:
 
 This project is open source and available under the [MIT License](LICENSE).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Design Inspiration**: Modern portfolio websites and UI/UX best practices
 - **Icons**: Font Awesome and Heroicons
