@@ -2,8 +2,8 @@
 
 <div align="center">
 
-![Website Banner]![image](https://github.com/user-attachments/assets/c50d3b64-77d5-4ec9-9cff-77233bfce8e2)
-![Website Banner]![image](https://github.com/user-attachments/assets/9d6b5bf6-1bf6-438d-a25a-a345fb845f74)
+[image](https://github.com/user-attachments/assets/c50d3b64-77d5-4ec9-9cff-77233bfce8e2)
+[image](https://github.com/user-attachments/assets/9d6b5bf6-1bf6-438d-a25a-a345fb845f74)
 
 
 > **A modern, responsive personal portfolio website showcasing my professional journey, projects, and skills**
