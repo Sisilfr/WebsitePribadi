@@ -1,4 +1,4 @@
-# 🌟 Suci Fransisca - Personal Portfolio Website
+# 🌟 Personal Portfolio Website
 
 <div align="center">
 
